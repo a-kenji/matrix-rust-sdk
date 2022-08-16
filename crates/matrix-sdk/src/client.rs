@@ -269,7 +269,7 @@ impl Client {
     }
 
     fn homeserver_from_user_id(user_id: &UserId) -> Result<Url> {
-        let homeserver = format!("https://{}", user_id.server_name());
+        let homeserver = format!("http://{}", user_id.server_name());
         #[allow(unused_mut)]
         let mut result = Url::parse(homeserver.as_str())?;
         // Mockito only knows how to test http endpoints:
